@@ -337,6 +337,8 @@ class Write(DrawBorderThenFill):
         lag_ratio: float | None,
     ) -> tuple[float, float]:
         length = len(vmobject.family_members_with_points())
+        if length == 0:
+            return 1,0
         if run_time is None:
             if length < 15:
                 run_time = 1
